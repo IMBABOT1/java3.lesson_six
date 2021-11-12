@@ -25,11 +25,23 @@ public class Main {
             }
         }
 
-        System.out.println(list);
+        int[] result = new int[list.size()];
+
+        for (int i = 0; i < list.size() ; i++) {
+            result[i] = list.get(i);
+        }
+
+        for (int i = 0; i < result.length /2 ; i++) {
+            int temp = result[i];
+            result[i] = result[result.length - i - 1];
+            result[result.length - i - 1] = temp;
+        }
+
+        System.out.println(Arrays.toString(result));
 
     }
 
     public static void main(String[] args) {
-        arrWithoutFour(new int[]{1,24,4,5,43,4,2,1,4,8,1,3}, 4);
+        arrWithoutFour(new int[]{1,24,4,5,43,2,1,8,1}, 4);
     }
 }
