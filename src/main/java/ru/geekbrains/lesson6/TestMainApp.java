@@ -1,10 +1,13 @@
+package ru.geekbrains.lesson6;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class TestMainApp {
 
-    private static void arrWithoutFour(int[] arr, int value){
+    public int[] arrWithoutFour(int[] arr){
+        int value = 4;
         int valueCount = 0;
         List<Integer> list = new ArrayList<>();
 
@@ -37,11 +40,12 @@ public class Main {
             result[result.length - i - 1] = temp;
         }
 
-        System.out.println(Arrays.toString(result));
+        return result;
+
     }
 
 
-    private static boolean checkNumbers(int[] arr){
+    public boolean checkNumbers(int[] arr){
         int oneCount = 0;
         int fourCount = 0;
         int result = 0;
@@ -66,8 +70,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        //arrWithoutFour(new int[]{1,24,4,5,43,2,1,8,1}, 4);
+        //System.out.println(Arrays.toString(arrWithoutFour(new int[]{1,24,4,5,43,2,1,8,1})));
 
-        System.out.println(checkNumbers(new int[]{22, 8, 3, 123, 547, 2, 123, 4}));
+      //  System.out.println(checkNumbers(new int[]{22, 8, 3, 123, 547, 2, 123, 4}));
     }
 }
