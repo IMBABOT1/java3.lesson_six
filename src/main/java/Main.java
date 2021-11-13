@@ -38,10 +38,36 @@ public class Main {
         }
 
         System.out.println(Arrays.toString(result));
-
     }
 
+
+    private static boolean checkNumbers(int[] arr){
+        int oneCount = 0;
+        int fourCount = 0;
+        int result = 0;
+
+
+        for (int i = 0; i < arr.length ; i++) {
+          if (arr[i] == 1){
+              oneCount++;
+          }else if (arr[i] == 4){
+              fourCount++;
+          }
+        }
+
+        result = oneCount + fourCount;
+
+        if (result < 1){
+            return false;
+        }
+
+        return true;
+    }
+
+
     public static void main(String[] args) {
-        arrWithoutFour(new int[]{1,24,4,5,43,2,1,8,1}, 4);
+        //arrWithoutFour(new int[]{1,24,4,5,43,2,1,8,1}, 4);
+
+        System.out.println(checkNumbers(new int[]{22, 8, 3, 123, 547, 2, 123, 4}));
     }
 }
